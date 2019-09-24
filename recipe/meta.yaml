@@ -10,7 +10,8 @@ source:
   sha256: 6645122a8fb2d6119e16a43a20c40b40a5b6781e0a4a33d185746e9d2535f64e
 
 build:
-  number: 0
+  number: 1
+  script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [linux32 or win32 or py<36]
 
 requirements:
@@ -23,6 +24,7 @@ requirements:
     - gsl
     - boost-cpp
     - numpy
+    - pip
     - python
     - setuptools
     - xarray
@@ -47,7 +49,6 @@ about:
     geosciences. There are other libraries that cover this problem, but written
     entirely in Python, the performance of these projects was not quite
     sufficient for our needs. That is why this project was created.
-  doc_url: http://simplejson.readthedocs.io/
   doc_url: https://pangeo-pyinterp.readthedocs.io/
   dev_url: https://github.com/CNES/pangeo-pyinterp
 

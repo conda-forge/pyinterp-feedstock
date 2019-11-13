@@ -1,5 +1,5 @@
 {% set name = "pyinterp" %}
-{% set version = "0.0.6" %}
+{% set version = "0.0.7" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 5bda74b2580668895143c19bda8b9bf51d24e8fb26066f6f0aadbcdd9579856f
+  sha256: b88365b07383d50ebfbbc66ab2c8c08623a6352afcb84b2caa82902224b46ade
 
 build:
   number: 0
@@ -25,6 +25,7 @@ requirements:
     - boost-cpp
     - numpy
     - pip
+    - pytest
     - python
     - setuptools
     - xarray

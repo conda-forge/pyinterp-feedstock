@@ -1,5 +1,5 @@
 {% set name = "pyinterp" %}
-{% set version = "0.0.7" %}
+{% set version = "0.0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: b88365b07383d50ebfbbc66ab2c8c08623a6352afcb84b2caa82902224b46ade
+  sha256: c8213e41876536def11ae5bd1052b180768fca0d8f2baa23cb0c1633ce1af251
 
 build:
   number: 0

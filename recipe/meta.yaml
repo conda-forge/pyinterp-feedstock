@@ -1,5 +1,5 @@
 {% set name = "pyinterp" %}
-{% set version = "0.1.0" %}
+{% set version = "0.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,22 +7,23 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 15cc7d3fe4121021b4f54b72288110988048a3baa6b9ac81e15a0d3e7487cf3b
+  sha256: d50bfabe16b7405b7822c847040a37fd13354837c82d7a700a88dde309abb2df
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [linux32 or win32 or py<36]
 
 requirements:
   build:
-    - {{ compiler('cxx') }}  # [linux or osx]
+    - {{ compiler('cxx') }}  # [linux or osx]
     - vs2017_win-64          # [win]
     - cmake
   host:
     - eigen
     - gsl
     - boost-cpp
+    - mkl-devel
     - numpy
     - pip
     - pytest
@@ -32,6 +33,7 @@ requirements:
   run:
     - {{ pin_compatible('numpy') }}
     - python
+    - mkl
     - xarray
 
 test:

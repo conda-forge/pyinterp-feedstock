@@ -34,7 +34,8 @@ requirements:
   run:
     - {{ pin_compatible('numpy') }}
     - python
-    - mkl
+    - libblas * *mkl # [linux or osx]
+    - mkl # [win]
     - xarray
 
 test:

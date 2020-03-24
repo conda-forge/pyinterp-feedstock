@@ -1,0 +1,25 @@
+boost_cpp:
+- '1.72'
+channel_sources:
+- conda-forge,defaults
+channel_targets:
+- conda-forge main
+gsl:
+- '2.6'
+mkl:
+- '2019'
+numpy:
+- '1.14'
+pin_run_as_build:
+  boost-cpp:
+    max_pin: x.x.x
+  mkl:
+    max_pin: x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- 3.8.* *_cpython
+zip_keys:
+- - numpy
+  - python

@@ -1,5 +1,5 @@
 {% set name = "pyinterp" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: db5cfa3c6fb5cb579307fef37c2882f1ee4614399971a47a7d859c8270ac6e62
+  sha256: f7132c918709bc78a43017b6034bf36595dfb149e3f591292ccfb3a5c43e4053
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [linux32 or win32 or py<36]
 
@@ -44,10 +44,10 @@ test:
 
 about:
   home: https://github.com/CNES/pangeo-pyinterp
-  license: BSD
+  license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Python library for optimized geo-referenced interpolation'
+  summary: Python library for optimized geo-referenced interpolation
 
   description: |
     Tools for interpolating geo-referenced data used in the field of

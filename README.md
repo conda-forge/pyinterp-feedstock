@@ -3,7 +3,7 @@ About pyinterp
 
 Home: https://github.com/CNES/pangeo-pyinterp
 
-Package license: BSD
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 

@@ -39,8 +39,8 @@ requirements:
     - eigen
     - gsl
     - boost-cpp
-    - mkl  # [blas == 'mkl']
-    - mkl-devel  # [blas == 'mkl']
+    - mkl {{ mkl }}  # [blas == 'mkl']
+    - mkl-devel {{ mkl }}  # [blas == 'mkl']
     - openblas  # [blas == 'openblas']
     - numpy
     - pip
@@ -59,6 +59,7 @@ requirements:
 test:
   imports:
     - pyinterp.core
+    - pyinterp
 
 about:
   home: https://github.com/CNES/pangeo-pyinterp

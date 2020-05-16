@@ -1,6 +1,14 @@
 {% set name = "pyinterp" %}
 {% set version = "0.3.2" %}
 
+# recipe-lint fails if blas is undefined
+{% set blas = blas or 'openblas' %}
+{% if blas == "openblas" %}
+# prioritize openblas via build number
+{% set build = build + 100 %}
+{% endif %}
+
+
 package:
   name: {{ name|lower }}
   version: {{ version }}
@@ -10,9 +18,16 @@ source:
   sha256: e4a0a052c14b2eb5b92aa0fe74c7026951194d5daa649095ef5978b58c4bfe77
 
 build:
-  number: 1
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [linux32 or win32 or py<36]
+
+  {% if blas != 'openblas' %}
+  {% set blas_prefix = "blas_" + blas %}
+  {% else %}
+  {% set blas_prefix = "blas_" + mkl %}
+  {% endif %}
+  string: "{{ blas_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}"
 
 requirements:
   build:
@@ -23,8 +38,9 @@ requirements:
     - eigen
     - gsl
     - boost-cpp
-    - mkl
-    - mkl-devel
+    - mkl  # [blas == 'mkl']
+    - mkl-devel  # [blas == 'mkl']
+    - openblas  # [blas == 'openblas']
     - numpy
     - pip
     - pytest
@@ -34,8 +50,9 @@ requirements:
   run:
     - {{ pin_compatible('numpy') }}
     - python
-    - libblas * *mkl  # [linux or osx]
-    - mkl  # [win]
+    - libblas * *mkl  # [(linux or osx) and (blas == 'mkl')]
+    - mkl  # [win and (blas == 'mkl')]
+    - libblas * *openblas  # [blas == 'openblas']
     - xarray
 
 test:

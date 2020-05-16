@@ -1,5 +1,6 @@
 {% set name = "pyinterp" %}
 {% set version = "0.3.2" %}
+{% set build = 2 %}
 
 # recipe-lint fails if blas is undefined
 {% set blas = blas or 'openblas' %}
@@ -18,14 +19,14 @@ source:
   sha256: e4a0a052c14b2eb5b92aa0fe74c7026951194d5daa649095ef5978b58c4bfe77
 
 build:
-  number: 2
+  number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv
   skip: true  # [linux32 or win32 or py<36]
 
   {% if blas != 'openblas' %}
-  {% set blas_prefix = "blas_" + blas %}
+  {% set blas_prefix = "openblas" %}
   {% else %}
-  {% set blas_prefix = "blas_" + mkl %}
+  {% set blas_prefix = "mkl" %}
   {% endif %}
   string: "{{ blas_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}"
 

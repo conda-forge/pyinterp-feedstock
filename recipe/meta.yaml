@@ -1,9 +1,9 @@
 {% set name = "pyinterp" %}
-{% set version = "0.3.2" %}
-{% set build = 2 %}
+{% set version = "0.4.0" %}
+{% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
-{% set blas = blas or 'openblas' %}
+{% set blas = blas or "openblas" %}
 {% if blas == "openblas" %}
 # prioritize openblas via build number
 {% set build = build + 100 %}
@@ -16,14 +16,14 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: e4a0a052c14b2eb5b92aa0fe74c7026951194d5daa649095ef5978b58c4bfe77
+  sha256: db803460e3db06acd133280067d632a0f1506d4e5b26113501dfbd25af7366d4
 
 build:
   number: {{ build }}
-  script: {{ PYTHON }} -m pip install . -vv
+  script: {{ PYTHON }} -m pip install . -vv --global-option=build --global-option="--blas={{ blas }}"
   skip: true  # [linux32 or win32 or py<36]
 
-  {% if blas != 'openblas' %}
+  {% if blas == "openblas" %}
   {% set blas_prefix = "openblas" %}
   {% else %}
   {% set blas_prefix = "mkl" %}
@@ -36,24 +36,28 @@ requirements:
     - vs2017_win-64          # [win]
     - cmake
   host:
+    - dask
     - eigen
     - gsl
     - boost-cpp
-    - mkl {{ mkl }}  # [blas == 'mkl']
-    - mkl-devel {{ mkl }}  # [blas == 'mkl']
-    - openblas  # [blas == 'openblas']
+    - mkl {{ mkl }}  # [blas == "mkl"]
+    - mkl-devel {{ mkl }}  # [blas == "mkl"]
+    - openblas  # [blas == "openblas"]
     - numpy
     - pip
     - pytest
     - python
     - setuptools
+    - snappy
     - xarray
   run:
     - {{ pin_compatible('numpy') }}
     - python
-    - libblas * *mkl  # [(linux or osx) and (blas == 'mkl')]
-    - mkl  # [win and (blas == 'mkl')]
-    - libblas * *openblas  # [blas == 'openblas']
+    - dask
+    - libblas * *mkl  # [(linux or osx) and (blas == "mkl")]
+    - mkl  # [win and (blas == "mkl")]
+    - libblas * *openblas  # [blas == "openblas"]
+    - llvm-openmp  # [(blas == "mkl")]
     - xarray
 
 test:

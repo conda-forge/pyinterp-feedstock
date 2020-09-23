@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 blas:
-- openblas
+- mkl
 boost_cpp:
 - 1.72.0
 channel_sources:
@@ -33,8 +33,11 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.7.* *_cpython
 snappy:
 - '1'
 target_platform:
 - osx-64
+zip_keys:
+- - numpy
+  - python

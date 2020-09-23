@@ -33,8 +33,11 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.6.* *_cpython
+- 3.8.* *_cpython
 snappy:
 - '1'
 target_platform:
 - osx-64
+zip_keys:
+- - numpy
+  - python

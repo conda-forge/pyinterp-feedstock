@@ -33,129 +33,255 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_blasmklpython3.6.____cpython</td>
+              <td>linux_64_blasmklboost_cpp1.72.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklpython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklboost_cpp1.72.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_blasmklpython3.7.____cpython</td>
+              <td>linux_64_blasmklboost_cpp1.72.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklpython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklboost_cpp1.72.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_blasmklpython3.8.____cpython</td>
+              <td>linux_64_blasmklboost_cpp1.72.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklpython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklboost_cpp1.72.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_blasopenblaspython3.6.____cpython</td>
+              <td>linux_64_blasmklboost_cpp1.74.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblaspython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklboost_cpp1.74.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_blasopenblaspython3.7.____cpython</td>
+              <td>linux_64_blasmklboost_cpp1.74.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblaspython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklboost_cpp1.74.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_blasopenblaspython3.8.____cpython</td>
+              <td>linux_64_blasmklboost_cpp1.74.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblaspython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasmklboost_cpp1.74.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_blasmklpython3.6.____cpython</td>
+              <td>linux_64_blasopenblasboost_cpp1.72.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklpython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblasboost_cpp1.72.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_blasmklpython3.7.____cpython</td>
+              <td>linux_64_blasopenblasboost_cpp1.72.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklpython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblasboost_cpp1.72.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_blasmklpython3.8.____cpython</td>
+              <td>linux_64_blasopenblasboost_cpp1.72.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklpython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblasboost_cpp1.72.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_blasopenblaspython3.6.____cpython</td>
+              <td>linux_64_blasopenblasboost_cpp1.74.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblaspython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblasboost_cpp1.74.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_blasopenblaspython3.7.____cpython</td>
+              <td>linux_64_blasopenblasboost_cpp1.74.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblaspython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblasboost_cpp1.74.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_blasopenblaspython3.8.____cpython</td>
+              <td>linux_64_blasopenblasboost_cpp1.74.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblaspython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=linux&configuration=linux_64_blasopenblasboost_cpp1.74.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_blasmklpython3.6.____cpython</td>
+              <td>osx_64_blasmklboost_cpp1.72.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklpython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklboost_cpp1.72.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_blasmklpython3.7.____cpython</td>
+              <td>osx_64_blasmklboost_cpp1.72.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklpython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklboost_cpp1.72.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_blasmklpython3.8.____cpython</td>
+              <td>osx_64_blasmklboost_cpp1.72.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklpython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklboost_cpp1.72.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_blasopenblaspython3.6.____cpython</td>
+              <td>osx_64_blasmklboost_cpp1.74.0python3.6.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblaspython3.6.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklboost_cpp1.74.0python3.6.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_blasopenblaspython3.7.____cpython</td>
+              <td>osx_64_blasmklboost_cpp1.74.0python3.7.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblaspython3.7.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklboost_cpp1.74.0python3.7.____cpython" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>win_64_blasopenblaspython3.8.____cpython</td>
+              <td>osx_64_blasmklboost_cpp1.74.0python3.8.____cpython</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblaspython3.8.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasmklboost_cpp1.74.0python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_blasopenblasboost_cpp1.72.0python3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblasboost_cpp1.72.0python3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_blasopenblasboost_cpp1.72.0python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblasboost_cpp1.72.0python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_blasopenblasboost_cpp1.72.0python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblasboost_cpp1.72.0python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_blasopenblasboost_cpp1.74.0python3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblasboost_cpp1.74.0python3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_blasopenblasboost_cpp1.74.0python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblasboost_cpp1.74.0python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>osx_64_blasopenblasboost_cpp1.74.0python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=osx&configuration=osx_64_blasopenblasboost_cpp1.74.0python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasmklboost_cpp1.72.0python3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklboost_cpp1.72.0python3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasmklboost_cpp1.72.0python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklboost_cpp1.72.0python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasmklboost_cpp1.72.0python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklboost_cpp1.72.0python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasmklboost_cpp1.74.0python3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklboost_cpp1.74.0python3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasmklboost_cpp1.74.0python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklboost_cpp1.74.0python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasmklboost_cpp1.74.0python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasmklboost_cpp1.74.0python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasopenblasboost_cpp1.72.0python3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblasboost_cpp1.72.0python3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasopenblasboost_cpp1.72.0python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblasboost_cpp1.72.0python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasopenblasboost_cpp1.72.0python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblasboost_cpp1.72.0python3.8.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasopenblasboost_cpp1.74.0python3.6.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblasboost_cpp1.74.0python3.6.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasopenblasboost_cpp1.74.0python3.7.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblasboost_cpp1.74.0python3.7.____cpython" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>win_64_blasopenblasboost_cpp1.74.0python3.8.____cpython</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=7861&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/pyinterp-feedstock?branchName=master&jobName=win&configuration=win_64_blasopenblasboost_cpp1.74.0python3.8.____cpython" alt="variant">
                 </a>
               </td>
             </tr>

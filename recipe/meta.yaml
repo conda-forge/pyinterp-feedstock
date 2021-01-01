@@ -19,8 +19,13 @@ source:
   sha256: 3d5ead667d0c1bee759739800faa356d03cbf363a121e31d7fc6f847394a2ac9
 
 build:
+  {% if blas == "openblas" %}
+  {% set mkl_option = "no" %}
+  {% else %}
+  {% set mkl_option = "yes" %}
+  {% endif %}
   number: {{ build }}
-  script: {{ PYTHON }} -m pip install . -vv --global-option=build --global-option="--blas={{ blas }}"
+  script: {{ PYTHON }} -m pip install . -vv --global-option=build --global-option="--mkl={{ mkl_option }}"
   skip: true  # [linux32 or win32 or py<36]
 
   {% if blas == "openblas" %}

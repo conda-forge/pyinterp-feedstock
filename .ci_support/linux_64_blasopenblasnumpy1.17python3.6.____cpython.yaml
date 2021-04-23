@@ -19,7 +19,7 @@ gsl:
 mkl:
 - '2020'
 numpy:
-- '1.16'
+- '1.17'
 openblas:
 - 0.3.*
 pin_run_as_build:

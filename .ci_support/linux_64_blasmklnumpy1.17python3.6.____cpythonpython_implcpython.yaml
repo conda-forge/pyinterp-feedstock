@@ -1,5 +1,5 @@
 blas:
-- openblas
+- mkl
 boost_cpp:
 - 1.74.0
 cdt_name:
@@ -33,7 +33,9 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.6.* *_cpython
+python_impl:
+- cpython
 snappy:
 - '1'
 target_platform:
@@ -43,3 +45,4 @@ zip_keys:
   - docker_image
 - - python
   - numpy
+  - python_impl

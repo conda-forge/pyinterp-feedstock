@@ -1,21 +1,21 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 blas:
 - mkl
 boost_cpp:
 - 1.74.0
-cdt_name:
-- cos6
 channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
 - '9'
-docker_image:
-- quay.io/condaforge/linux-anvil-comp7
 gsl:
 - '2.6'
+macos_machine:
+- x86_64-apple-darwin13.4.0
 mkl:
 - '2020'
 numpy:
@@ -33,13 +33,14 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.6.* *_cpython
+- 3.8.* *_cpython
+python_impl:
+- cpython
 snappy:
 - '1'
 target_platform:
-- linux-64
+- osx-64
 zip_keys:
-- - cdt_name
-  - docker_image
 - - python
   - numpy
+  - python_impl

@@ -26,7 +26,7 @@ build:
   {% endif %}
   number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv --global-option=build --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge"
-  skip: true  # [linux32 or win32 or py<36]
+  skip: true  # [linux32 or win32 or py<36 or (py<37 and python_impl=="pypy")]
 
   {% if blas == "openblas" %}
   {% set blas_prefix = "openblas" %}

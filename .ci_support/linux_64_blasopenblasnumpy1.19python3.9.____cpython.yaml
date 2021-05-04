@@ -17,7 +17,7 @@ docker_image:
 gsl:
 - '2.6'
 mkl:
-- '2020'
+- '2021'
 numpy:
 - '1.19'
 openblas:

@@ -32,6 +32,18 @@ jobs:
       osx_64_blasopenblasnumpy1.19python3.9.____cpython:
         CONFIG: osx_64_blasopenblasnumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_blasmklpython3.8.____cpython:
+        CONFIG: osx_arm64_blasmklpython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_blasmklpython3.9.____cpython:
+        CONFIG: osx_arm64_blasmklpython3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_blasopenblaspython3.8.____cpython:
+        CONFIG: osx_arm64_blasopenblaspython3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_blasopenblaspython3.9.____cpython:
+        CONFIG: osx_arm64_blasopenblaspython3.9.____cpython
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
 
   steps:

@@ -1,12 +1,6 @@
-cxx_compiler_version:  # [osx]
-  - 9                  # [osx]
-
 blas:
   - openblas
   - mkl
-
-mkl:
-  - 2020
 
 pin_run_as_build:
   openblas:

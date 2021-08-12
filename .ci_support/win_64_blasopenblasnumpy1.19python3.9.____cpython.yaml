@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 gsl:
-- '2.6'
+- '2.7'
 mkl:
 - '2021'
 numpy:

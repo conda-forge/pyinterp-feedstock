@@ -66,6 +66,10 @@ requirements:
     - xarray
 
 test:
+  requires:
+    - pytest
+  commands:
+    - pytest
   imports:
     - pyinterp.core
     - pyinterp

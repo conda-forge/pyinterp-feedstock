@@ -57,18 +57,21 @@ requirements:
     - xarray
   run:
     - {{ pin_compatible('numpy') }}
-    - python
     - dask
+    - fsspec
     - libblas * *mkl  # [(linux or osx) and (blas == "mkl")]
-    - mkl  # [win and (blas == "mkl")]
     - libblas * *openblas  # [blas == "openblas"]
     - llvm-openmp  # [(blas == "mkl")]
+    - mkl  # [win and (blas == "mkl")]
+    - numcodecs
+    - python
     - xarray
 
 test:
-  imports:
-    - pyinterp.core
-    - pyinterp
+  requires:
+    - pytest
+  commands:
+    - pytest
 
 about:
   home: https://github.com/CNES/pangeo-pyinterp

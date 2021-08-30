@@ -68,10 +68,9 @@ requirements:
     - xarray
 
 test:
-  requires:
-    - pytest
-  commands:
-    - pytest
+  imports:
+    - pyinterp.core
+    - pyinterp
 
 about:
   home: https://github.com/CNES/pangeo-pyinterp

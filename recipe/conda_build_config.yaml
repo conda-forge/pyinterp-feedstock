@@ -5,9 +5,10 @@ blas:
 gsl:
   - 2.7
 
-boost:
-  - 1.77
+boost_cpp:
+  - 1.77.0
 
 pin_run_as_build:
   gsl: x.x
-  boost: x.x
+  boost-cpp:
+    max_pin: x.x.x

@@ -1,0 +1,31 @@
+blas:
+- openblas
+boost_cpp:
+- 1.74.0
+channel_sources:
+- conda-forge
+channel_targets:
+- conda-forge main
+gsl:
+- '2.7'
+mkl:
+- '2021'
+numpy:
+- '1.21'
+openblas:
+- 0.3.*
+pin_run_as_build:
+  boost-cpp:
+    max_pin: x.x.x
+  python:
+    min_pin: x.x
+    max_pin: x.x
+python:
+- 3.10.* *_cpython
+snappy:
+- '1'
+target_platform:
+- win-64
+zip_keys:
+- - python
+  - numpy

@@ -2,8 +2,8 @@ blas:
   - openblas
   - mkl
 
-# pin_run_as_build:
-#   openblas:
-#     max_pin: x.x
-#   mkl:
-#     max_pin: x
+gsl:
+  - 2.7
+
+pin_run_as_build:
+  gsl: x.x

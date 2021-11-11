@@ -1,13 +1,11 @@
 blas:
 - openblas
 boost_cpp:
-- 1.74.0
+- 1.77.0
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-gsl:
-- '2.7'
 mkl:
 - '2021'
 numpy:

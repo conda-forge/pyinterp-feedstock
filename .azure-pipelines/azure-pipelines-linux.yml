@@ -20,10 +20,6 @@ jobs:
         CONFIG: linux_64_blasmklnumpy1.19python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_blasmklnumpy1.21python3.10.____cpython:
-        CONFIG: linux_64_blasmklnumpy1.21python3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
       linux_64_blasopenblasnumpy1.18python3.7.____cpython:
         CONFIG: linux_64_blasopenblasnumpy1.18python3.7.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -34,10 +30,6 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
       linux_64_blasopenblasnumpy1.19python3.9.____cpython:
         CONFIG: linux_64_blasopenblasnumpy1.19python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
-      linux_64_blasopenblasnumpy1.21python3.10.____cpython:
-        CONFIG: linux_64_blasopenblasnumpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-comp7
   timeoutInMinutes: 360

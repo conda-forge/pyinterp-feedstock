@@ -1,5 +1,5 @@
 {% set name = "pyinterp" %}
-{% set version = "0.9.2" %}
+{% set version = "0.9.3" %}
 {% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 7293f2c300df5ee84f85693ac5c3e206bf10763f0a03e1d44869de53c32e7939
+  sha256: 15783ae9ea129623630f8edf47e3c3459c558b4bdba10bc730c849ee0ecb1b60
 
 build:
   {% if blas == "openblas" %}

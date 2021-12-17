@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 63f2b3f4d1f4cdc5d2a5e7ff7d2212ed5986056f4d21f78fe7cf20811bc7335c
+  sha256: 321b8f9cbdebc3ddc7f1fd06b6fe56bef27af7f34d2b1f4ee289f0b1cdb97463
 
 build:
   {% if blas == "openblas" %}
@@ -27,7 +27,6 @@ build:
   number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv --global-option=build --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge"
   skip: true  # [linux32 or win32 or py<36]
-  binary_relocation: false  # [osx]
 
   {% if blas == "openblas" %}
   {% set blas_prefix = "openblas" %}

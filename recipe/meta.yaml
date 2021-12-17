@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 321b8f9cbdebc3ddc7f1fd06b6fe56bef27af7f34d2b1f4ee289f0b1cdb97463
+  sha256: 326088e78802559ce5676544974f536d12d2e063f8916e39ca1b6bc7de561e03
 
 build:
   {% if blas == "openblas" %}

@@ -1,6 +1,6 @@
 blas:
   - openblas
-  - mkl
+  - mkl  # [linux or win]
 
 gsl:
   - 2.7

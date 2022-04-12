@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 blas:
-- openblas
+- mkl
 boost_cpp:
 - 1.77.0
 channel_sources:
@@ -19,7 +19,7 @@ macos_machine:
 mkl:
 - '2022'
 numpy:
-- '1.18'
+- '1.19'
 openblas:
 - 0.3.*
 pin_run_as_build:

@@ -9,7 +9,7 @@ channel_targets:
 mkl:
 - '2022'
 numpy:
-- '1.18'
+- '1.19'
 openblas:
 - 0.3.*
 pin_run_as_build:

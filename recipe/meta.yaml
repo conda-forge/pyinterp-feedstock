@@ -15,7 +15,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/CNES/pangeo-pyinterp/releases/download/untagged-66c5bddadc1983ebc21e/pyinterp-0.15.2.tar.gz
+  url: https://test-files.pythonhosted.org/packages/c0/88/a6db6a9de5042f291416fe9a8511ed1b47299256e0eae429d2e2bbae88e2/pyinterp-0.15.2.tar.gz
   #https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
   sha256: f89c8b6c653e8b00ad4274281ca5aac72438f97a18247db32576b8ebf1661483
 

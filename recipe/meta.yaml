@@ -1,5 +1,5 @@
 {% set name = "pyinterp" %}
-{% set version = "0.15.1" %}
+{% set version = "0.15.2" %}
 {% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
@@ -15,8 +15,9 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: f89c8b6c653e8b00ad4274281ca5aac72438f97a18247db32576b8ebf1661483
+  url: https://test-files.pythonhosted.org/packages/c0/88/a6db6a9de5042f291416fe9a8511ed1b47299256e0eae429d2e2bbae88e2/pyinterp-0.15.2.tar.gz
+  #https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  sha256: ec13a8d3143eba3b166fa20a7a3c5dfe091031f18a5a223df5238196f7433e6a
 
 build:
   {% if blas == "openblas" %}
@@ -26,7 +27,7 @@ build:
   {% endif %}
   number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge"
-  skip: true  # [linux32 or win32 or py<36]
+  skip: true  # [linux32 or win32 or py<36 or (arm64 and blas != "openblas")]
 
   {% if blas == "openblas" %}
   {% set blas_prefix = "openblas" %}
@@ -37,18 +38,21 @@ build:
 
 requirements:
   build:
-    - {{ compiler('cxx') }}  # [linux or osx]
-    - vs2017_win-64          # [win]
+    - python                              # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
+    - setuptools                          # [build_platform != target_platform]
+    - {{ compiler('cxx') }}               # [linux or osx]
+    - vs2017_win-64                       # [win]
     - cmake
-    - make                   # [linux]
+    - make                                # [linux]
   host:
     - dask
     - eigen
     - gsl ==2.7
     - boost-cpp
-    - mkl {{ mkl }}  # [blas == "mkl"]
-    - mkl-devel {{ mkl }}  # [blas == "mkl"]
-    - openblas  # [blas == "openblas"]
+    - mkl {{ mkl }}                       # [blas == "mkl"]
+    - mkl-devel {{ mkl }}                 # [blas == "mkl"]
+    - openblas                            # [blas == "openblas"]
     - numpy
     - pip
     - pytest
@@ -59,10 +63,10 @@ requirements:
     - {{ pin_compatible('numpy') }}
     - dask
     - fsspec
-    - libblas * *mkl  # [(linux or osx) and (blas == "mkl")]
-    - libblas * *openblas  # [blas == "openblas"]
-    - llvm-openmp  # [(blas == "mkl")]
-    - mkl  # [win and (blas == "mkl")]
+    - libblas * *mkl                      # [(linux or osx) and (blas == "mkl")]
+    - libblas * *openblas                 # [blas == "openblas"]
+    - llvm-openmp                         # [(blas == "mkl")]
+    - mkl                                 # [win and (blas == "mkl")]
     - numcodecs
     - python
     - xarray

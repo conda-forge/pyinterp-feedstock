@@ -1,3 +1,5 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '10.9'
 blas:
 - openblas
 boost_cpp:
@@ -6,10 +8,18 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+cxx_compiler:
+- clangxx
+cxx_compiler_version:
+- '14'
+llvm_openmp:
+- '14'
+macos_machine:
+- x86_64-apple-darwin13.4.0
 mkl:
 - '2022'
 numpy:
-- '1.19'
+- '1.20'
 openblas:
 - 0.3.*
 pin_run_as_build:
@@ -21,7 +31,7 @@ pin_run_as_build:
 python:
 - 3.8.* *_cpython
 target_platform:
-- win-64
+- osx-64
 zip_keys:
 - - python
   - numpy

@@ -17,6 +17,9 @@ jobs:
       win_64_blasmklnumpy1.21python3.10.____cpython:
         CONFIG: win_64_blasmklnumpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
+      win_64_blasmklnumpy1.23python3.11.____cpython:
+        CONFIG: win_64_blasmklnumpy1.23python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
       win_64_blasopenblasnumpy1.20python3.8.____cpython:
         CONFIG: win_64_blasopenblasnumpy1.20python3.8.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -26,9 +29,13 @@ jobs:
       win_64_blasopenblasnumpy1.21python3.10.____cpython:
         CONFIG: win_64_blasopenblasnumpy1.21python3.10.____cpython
         UPLOAD_PACKAGES: 'True'
+      win_64_blasopenblasnumpy1.23python3.11.____cpython:
+        CONFIG: win_64_blasopenblasnumpy1.23python3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\
+    UPLOAD_TEMP: D:\\tmp
 
   steps:
     - task: PythonScript@0
@@ -87,6 +94,9 @@ jobs:
     - script: |
         set "GIT_BRANCH=%BUILD_SOURCEBRANCHNAME%"
         set "FEEDSTOCK_NAME=%BUILD_REPOSITORY_NAME:*/=%"
+        set "TEMP=$(UPLOAD_TEMP)"
+        if not exist "%TEMP%\" md "%TEMP%"
+        set "TMP=%TEMP%"
         call activate base
         upload_package --validate --feedstock-name="%FEEDSTOCK_NAME%" .\ ".\recipe" .ci_support\%CONFIG%.yaml
       displayName: Upload package

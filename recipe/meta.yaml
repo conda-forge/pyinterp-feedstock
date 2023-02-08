@@ -65,7 +65,7 @@ requirements:
     - dask
     - libblas * *mkl                      # [(linux or osx) and (blas == "mkl")]
     - libblas * *openblas                 # [blas == "openblas"]
-    - mkl                                 # [win and (blas == "mkl")]
+    - mkl *                               # [blas == "mkl"]
     - python
     - xarray
 

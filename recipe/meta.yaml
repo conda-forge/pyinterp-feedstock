@@ -34,6 +34,11 @@ build:
   {% endif %}
   string: {{ blas_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
+  ignore_run_exports:
+    - mkl                                 # [blas == "mkl"]
+    - openblas                            # [blas == "openblas"]
+    - gsl
+
 requirements:
   build:
     - python                              # [build_platform != target_platform]
@@ -48,8 +53,7 @@ requirements:
     - eigen
     - gsl >=2.7
     - boost-cpp >=1.79.0
-    - mkl {{ mkl }}                       # [blas == "mkl"]
-    - mkl-devel {{ mkl }}                 # [blas == "mkl"]
+    - mkl                                 # [blas == "mkl"]
     - openblas                            # [blas == "openblas"]
     - numpy
     - pip
@@ -60,11 +64,7 @@ requirements:
   run:
     - {{ pin_compatible('numpy') }}
     - dask
-    - fsspec
-    - libblas * *mkl                      # [(linux or osx) and (blas == "mkl")]
-    - libblas * *openblas                 # [blas == "openblas"]
-    - mkl                                 # [win and (blas == "mkl")]
-    - numcodecs
+    - mkl *                               # [blas == "mkl"]
     - python
     - xarray
 

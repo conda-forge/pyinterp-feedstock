@@ -37,7 +37,7 @@ build:
   ignore_run_exports:
     - mkl                                 # [blas == "mkl"]
     - openblas                            # [blas == "openblas"]
-    - gsl
+    - gsl                                 # [linux or osx]
 
 requirements:
   build:

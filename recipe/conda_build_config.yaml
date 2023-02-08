@@ -1,17 +1,3 @@
 blas:
   - openblas
   - mkl
-
-gsl:
-  - 2.7
-
-boost_cpp:
-  - 1.79.0
-
-mkl:
-  - 2023.0.0
-
-pin_run_as_build:
-  gsl: x.x
-  boost-cpp:
-    max_pin: x.x.x

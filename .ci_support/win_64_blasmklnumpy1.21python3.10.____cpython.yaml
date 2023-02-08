@@ -4,17 +4,15 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
+gsl:
+- '2.7'
 mkl:
-- 2023.0.0
+- '2022'
 numpy:
 - '1.21'
 openblas:
 - 0.3.*
 pin_run_as_build:
-  mkl:
-    max_pin: x.x.x
-  openblas:
-    max_pin: x.x.x
   python:
     min_pin: x.x
     max_pin: x.x

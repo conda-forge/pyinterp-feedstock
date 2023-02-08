@@ -6,7 +6,10 @@ gsl:
   - 2.7
 
 boost_cpp:
-  - 1.77.0
+  - 1.79.0
+
+mkl:
+  - 2023.0.0
 
 pin_run_as_build:
   gsl: x.x

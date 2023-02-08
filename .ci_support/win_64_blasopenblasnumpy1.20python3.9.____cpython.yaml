@@ -1,19 +1,19 @@
 blas:
 - openblas
-boost_cpp:
-- 1.77.0
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 mkl:
-- '2022'
+- 2023.0.0
 numpy:
 - '1.20'
 openblas:
 - 0.3.*
 pin_run_as_build:
-  boost-cpp:
+  mkl:
+    max_pin: x.x.x
+  openblas:
     max_pin: x.x.x
   python:
     min_pin: x.x

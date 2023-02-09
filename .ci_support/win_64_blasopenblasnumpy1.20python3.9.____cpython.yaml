@@ -4,9 +4,9 @@ channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-gsl:
-- '2.7'
 mkl:
+- '2022'
+mkl_devel:
 - '2022'
 numpy:
 - '1.20'

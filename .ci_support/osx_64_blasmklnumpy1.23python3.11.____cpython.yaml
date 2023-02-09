@@ -16,6 +16,8 @@ macos_machine:
 - x86_64-apple-darwin13.4.0
 mkl:
 - '2022'
+mkl_devel:
+- '2022'
 numpy:
 - '1.23'
 openblas:

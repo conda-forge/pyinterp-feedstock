@@ -1,6 +1,6 @@
 {% set name = "pyinterp" %}
-{% set version = "2023.2.0" %}
-{% set build = 0 %}
+{% set version = "2022.10.1" %}
+{% set build = 1 %}
 
 # recipe-lint fails if blas is undefined
 {% set blas = blas or "openblas" %}
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6b8387081818b9b1c50e249d3f295af438d44fb873d42e728be6a887d8c70602
+  sha256: 14a802cbc19acd76a4bd9a2cf31b733d330e8b9bcd6a9af7ec0b3711b4b03745
 
 build:
   {% if blas == "openblas" %}
@@ -35,6 +35,11 @@ build:
   {% endif %}
   string: {{ blas_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
+  ignore_run_exports:
+    - mkl                                 # [blas == "mkl"]
+    - openblas                            # [blas == "openblas"]
+    - gsl                                 # [linux or osx]
+
 requirements:
   build:
     - python                              # [build_platform != target_platform]
@@ -47,10 +52,9 @@ requirements:
   host:
     - dask
     - eigen
-    - gsl ==2.7
+    - gsl >=2.7
     - boost-cpp >=1.79.0
-    - mkl {{ mkl }}                       # [blas == "mkl"]
-    - mkl-devel {{ mkl }}                 # [blas == "mkl"]
+    - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [blas == "openblas"]
     - numpy
     - pip
@@ -61,11 +65,8 @@ requirements:
   run:
     - {{ pin_compatible('numpy') }}
     - dask
-    - fsspec
-    - libblas * *mkl                      # [(linux or osx) and (blas == "mkl")]
-    - libblas * *openblas                 # [blas == "openblas"]
-    - mkl                                 # [win and (blas == "mkl")]
-    - numcodecs
+    - mkl *                               # [blas == "mkl"]
+    - openblas *                          # [blas == "openblas"]
     - python
     - xarray
 

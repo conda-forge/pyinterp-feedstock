@@ -35,6 +35,8 @@ build:
   string: {{ blas_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
   ignore_run_exports:
+    - mkl                                 # [blas == "mkl"]
+    - openblas                            # [blas == "openblas"]
     - gsl                                 # [linux or osx]
 
 requirements:

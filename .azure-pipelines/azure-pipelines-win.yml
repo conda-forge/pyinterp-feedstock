@@ -5,29 +5,29 @@
 jobs:
 - job: win
   pool:
-    vmImage: windows-2019
+    vmImage: windows-2022
   strategy:
     matrix:
-      win_64_blasmklnumpy1.20python3.8.____cpython:
-        CONFIG: win_64_blasmklnumpy1.20python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy1.20python3.9.____cpython:
-        CONFIG: win_64_blasmklnumpy1.20python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_blasmklnumpy1.21python3.10.____cpython:
         CONFIG: win_64_blasmklnumpy1.21python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_blasmklnumpy1.21python3.8.____cpython:
+        CONFIG: win_64_blasmklnumpy1.21python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_blasmklnumpy1.21python3.9.____cpython:
+        CONFIG: win_64_blasmklnumpy1.21python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_blasmklnumpy1.23python3.11.____cpython:
         CONFIG: win_64_blasmklnumpy1.23python3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy1.20python3.8.____cpython:
-        CONFIG: win_64_blasopenblasnumpy1.20python3.8.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy1.20python3.9.____cpython:
-        CONFIG: win_64_blasopenblasnumpy1.20python3.9.____cpython
-        UPLOAD_PACKAGES: 'True'
       win_64_blasopenblasnumpy1.21python3.10.____cpython:
         CONFIG: win_64_blasopenblasnumpy1.21python3.10.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_blasopenblasnumpy1.21python3.8.____cpython:
+        CONFIG: win_64_blasopenblasnumpy1.21python3.8.____cpython
+        UPLOAD_PACKAGES: 'True'
+      win_64_blasopenblasnumpy1.21python3.9.____cpython:
+        CONFIG: win_64_blasopenblasnumpy1.21python3.9.____cpython
         UPLOAD_PACKAGES: 'True'
       win_64_blasopenblasnumpy1.23python3.11.____cpython:
         CONFIG: win_64_blasopenblasnumpy1.23python3.11.____cpython
@@ -57,7 +57,7 @@ jobs:
 
     - script: |
         call activate base
-        mamba.exe install "python=3.9" conda-build conda pip boa conda-forge-ci-setup=3 "py-lief<0.12" -c conda-forge --strict-channel-priority --yes
+        mamba.exe install "python=3.10" conda-build conda pip boa conda-forge-ci-setup=3 -c conda-forge --strict-channel-priority --yes
       displayName: Install conda-build
 
     - script: set PYTHONUNBUFFERED=1

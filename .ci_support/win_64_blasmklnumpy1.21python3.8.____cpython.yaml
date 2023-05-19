@@ -1,23 +1,15 @@
 blas:
-- openblas
-cdt_name:
-- cos6
+- mkl
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
-cxx_compiler:
-- gxx
-cxx_compiler_version:
-- '11'
-docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
-gsl:
-- '2.7'
 mkl:
 - '2022'
+mkl_devel:
+- '2022'
 numpy:
-- '1.20'
+- '1.21'
 openblas:
 - 0.3.*
 pin_run_as_build:
@@ -25,9 +17,9 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.9.* *_cpython
+- 3.8.* *_cpython
 target_platform:
-- linux-64
+- win-64
 zip_keys:
 - - python
   - numpy

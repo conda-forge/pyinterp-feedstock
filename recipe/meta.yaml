@@ -25,7 +25,11 @@ build:
   {% set mkl_option = "yes" %}
   {% endif %}
   number: {{ build }}
+  {% if target_platform == "win-64" %}
+  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge" --global-option="--generator='Visual Studio 17 2022'"
+  {% else %}
   script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge"
+  {% endif %}
   skip: true  # [linux32 or win32 or py<36 or (arm64 and blas != "openblas")]
 
   {% if blas == "openblas" %}

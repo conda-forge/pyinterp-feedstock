@@ -34,14 +34,14 @@ build:
 
   {% if blas == "openblas" %}
   {% if win or linux %}
-  {% set blas_prefix = "openblas" %}
+  {% set blas_prefix = "openblas_" %}
   {% else %}
-  {% set blas_prefix = "" %}
+  {% set blas_prefix = "" %}  # For osx, dot not use a prefix, because we use the system blas (accelerate)
   {% endif %}
   {% else %}
-  {% set blas_prefix = "mkl" %}
+  {% set blas_prefix = "mkl_" %}
   {% endif %}
-  string: {{ blas_prefix }}_py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
+  string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
   ignore_run_exports:
     - mkl                                 # [blas == "mkl"]

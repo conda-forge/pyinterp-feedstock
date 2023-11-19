@@ -15,7 +15,7 @@ docker_image:
 gsl:
 - '2.7'
 mkl:
-- '2022'
+- '2023'
 mkl_devel:
 - '2022'
 numpy:

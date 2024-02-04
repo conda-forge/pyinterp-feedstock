@@ -60,7 +60,7 @@ requirements:
     - dask
     - eigen
     - gsl >=2.7
-    - boost-cpp >=1.79.0
+    - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
     - numpy

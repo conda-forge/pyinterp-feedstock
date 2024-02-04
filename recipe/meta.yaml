@@ -53,8 +53,7 @@ requirements:
     - python                              # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - setuptools                          # [build_platform != target_platform]
-    - {{ compiler('cxx') }}               # [linux or osx]
-    - vs2017_win-64                       # [win]
+    - {{ compiler('cxx') }}
     - cmake
     - make                                # [linux]
   host:

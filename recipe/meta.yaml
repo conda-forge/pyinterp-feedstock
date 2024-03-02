@@ -1,6 +1,6 @@
 {% set name = "pyinterp" %}
-{% set version = "2024.2.0" %}
-{% set sha256 = "1bd517143b74fd4b094f0333a8b40655180841ef88bb57aa7bb52b91c9183acc" %}
+{% set version = "2024.3.0" %}
+{% set sha256 = "d1cf2e3995b1415e0a511a510076ac99b35c071d2608d32f209d09c3ecd711e8" %}
 {% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
@@ -47,7 +47,6 @@ build:
   ignore_run_exports:
     - mkl                                 # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
-    - gsl                                 # [linux or osx]
 
 requirements:
   build:
@@ -60,7 +59,6 @@ requirements:
   host:
     - dask
     - eigen
-    - gsl >=2.7
     - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]

@@ -2,6 +2,10 @@ MACOSX_DEPLOYMENT_TARGET:
 - '11.0'
 blas:
 - openblas
+c_stdlib:
+- macosx_deployment_target
+c_stdlib_version:
+- '11.0'
 channel_sources:
 - conda-forge
 channel_targets:
@@ -27,5 +31,7 @@ python:
 target_platform:
 - osx-arm64
 zip_keys:
+- - c_stdlib_version
+  - MACOSX_DEPLOYMENT_TARGET
 - - python
   - numpy

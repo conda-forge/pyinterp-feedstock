@@ -1,7 +1,7 @@
 {% set name = "pyinterp" %}
-{% set version = "2024.3.0" %}
-{% set sha256 = "d1cf2e3995b1415e0a511a510076ac99b35c071d2608d32f209d09c3ecd711e8" %}
-{% set build = 1 %}
+{% set version = "2024.6.0" %}
+{% set sha256 = "95b5accbd73846a9d3e819bf1d9a9c875030fe291271279fd2068be2c2929f4d" %}
+{% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
 {% set blas = blas or "openblas" %}
@@ -70,7 +70,6 @@ requirements:
     - setuptools
     - xarray
   run:
-    - {{ pin_compatible('numpy') }}
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]

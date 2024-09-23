@@ -8,35 +8,29 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_blasmklnumpy1.22python3.8.____cpython:
-        CONFIG: win_64_blasmklnumpy1.22python3.8.____cpython
+      win_64_blasmklpython3.10.____cpython:
+        CONFIG: win_64_blasmklpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2.0python3.10.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.10.____cpython
+      win_64_blasmklpython3.11.____cpython:
+        CONFIG: win_64_blasmklpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2.0python3.11.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.11.____cpython
+      win_64_blasmklpython3.12.____cpython:
+        CONFIG: win_64_blasmklpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2.0python3.12.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.12.____cpython
+      win_64_blasmklpython3.9.____cpython:
+        CONFIG: win_64_blasmklpython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2.0python3.9.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.9.____cpython
+      win_64_blasopenblaspython3.10.____cpython:
+        CONFIG: win_64_blasopenblaspython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy1.22python3.8.____cpython:
-        CONFIG: win_64_blasopenblasnumpy1.22python3.8.____cpython
+      win_64_blasopenblaspython3.11.____cpython:
+        CONFIG: win_64_blasopenblaspython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.10.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.10.____cpython
+      win_64_blasopenblaspython3.12.____cpython:
+        CONFIG: win_64_blasopenblaspython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.11.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.11.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.12.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.12.____cpython
-        UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.9.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.9.____cpython
+      win_64_blasopenblaspython3.9.____cpython:
+        CONFIG: win_64_blasopenblaspython3.9.____cpython
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:

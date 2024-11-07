@@ -31,7 +31,7 @@ build:
   {% else %}
   script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}"
   {% endif %}
-  skip: true  # [linux32 or win32 or py<36 or (arm64 and blas != "openblas")]
+  skip: true  # [linux32 or win32 or py<310 or (arm64 and blas != "openblas")]
 
   {% if blas == "openblas" %}
   {% if win or linux %}
@@ -50,7 +50,7 @@ build:
 
 requirements:
   build:
-    - python                              # [build_platform != target_platform]
+    - python >=3.10                       # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
     - setuptools                          # [build_platform != target_platform]
     - {{ compiler('cxx') }}

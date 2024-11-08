@@ -1,11 +1,8 @@
 {% set name = "pyinterp" %}
 {% set version = "2024.11.0" %}
-{% set sha256 = "65d6f8b380ebccc6387147297d87b7013c92c3961cdf2c3fcc5935b1e6bae6d0" %}
+{% set sha256 = "8c0a4d0ab12f48cdc86da96cc43dda731c7879c4f88d92367e3452207785af03" %}
 {% set build = 0 %}
 
-{% if "osx" in target_platform %}
-{% set blas = "" %}
-{% endif %}
 # recipe-lint fails if blas is undefined
 {% set blas = blas or "openblas" %}
 {% if blas == "openblas" %}
@@ -33,7 +30,7 @@ build:
   {% else %}
   script: {{ PYTHON }} -m pip install . -vv -Cmkl={{ mkl_option }}"
   {% endif %}
-  skip: true  # [linux32 or win32 or py<310 or (arm64 and blas != "openblas")]
+  skip: true  # [linux32 or win32 or py<310 or (arm64 and blas != "accelerate")]
 
   {% if blas == "openblas" %}
   {% if win or linux %}
@@ -49,6 +46,7 @@ build:
   ignore_run_exports:
     - mkl                                 # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
+    - blas=*=accelerate                   # [osx]
 
 requirements:
   build:
@@ -65,6 +63,7 @@ requirements:
     - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
+    - blas=*=accelerate                   # [osx]
     - numpy
     - pip
     - pytest
@@ -75,6 +74,7 @@ requirements:
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]
+    - blas=*=accelerate *                 # [osx]
     - python
     - xarray >=0.13
 

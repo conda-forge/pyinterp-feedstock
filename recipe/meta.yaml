@@ -74,7 +74,7 @@ requirements:
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]
-    - blas=*=accelerate *                 # [osx]
+    - blas=*=accelerate                   # [osx]
     - python
     - xarray >=0.13
 

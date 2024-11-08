@@ -1,3 +1,4 @@
 blas:
-  - openblas
-  - mkl
+  - openblas    # [win or linux]
+  - mkl         # [win or linux]
+  - accelerate  # [osx]

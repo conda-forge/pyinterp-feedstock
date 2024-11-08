@@ -1,15 +1,14 @@
 {% set name = "pyinterp" %}
-{% set version = "2024.6.0" %}
-{% set sha256 = "95b5accbd73846a9d3e819bf1d9a9c875030fe291271279fd2068be2c2929f4d" %}
-{% set build = 2 %}
+{% set version = "2024.11.0" %}
+{% set sha256 = "a2c685937ae557bf98a6c903645afc49aef5320ac14de11820f6fe271afd0da6" %}
+{% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
 {% set blas = blas or "openblas" %}
 {% if blas == "openblas" %}
 # prioritize openblas via build number
-{% set build = build + 100 %}
+{%   set build = build + 100 %}
 {% endif %}
-
 
 package:
   name: {{ name|lower }}
@@ -20,20 +19,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  {% if blas == "openblas" %}
+  {% if blas != "mkl" %}
   {% set mkl_option = "no" %}
   {% else %}
   {% set mkl_option = "yes" %}
   {% endif %}
   number: {{ build }}
   {% if target_platform == "win-64" %}
-  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge" --global-option="--generator=Visual Studio 17 2022"
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} -Cgenerator="Visual Studio 17 2022"
   {% else %}
-  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}" --global-option="--conda-forge"
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }}
   {% endif %}
-  skip: true  # [linux32 or win32 or py<36 or (arm64 and blas != "openblas")]
+  skip: true  # [linux32 or win32 or py<310]
 
-  {% if blas == "openblas" %}
+  {% if blas == "openblas" or osx %}
   {% if win or linux %}
   {% set blas_prefix = "openblas_" %}
   {% else %}
@@ -45,8 +44,10 @@ build:
   string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
   ignore_run_exports:
-    - mkl                                 # [blas == "mkl"]
-    - openblas                            # [(blas == "openblas") and (win or linux)]
+    - xarray
+    - numpy
+    - libboost
+    - python
 
 requirements:
   build:
@@ -56,13 +57,14 @@ requirements:
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - cmake
-    - make                                # [linux]
+    - make                                # [linux or osx]
   host:
     - dask
     - eigen
     - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
+    - blas =*=accelerate                  # [osx]
     - numpy
     - pip
     - pytest
@@ -73,6 +75,7 @@ requirements:
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]
+    - blas =*=accelerate                  # [osx]
     - python
     - xarray >=0.13
 

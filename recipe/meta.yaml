@@ -1,6 +1,6 @@
 {% set name = "pyinterp" %}
 {% set version = "2024.11.0" %}
-{% set sha256 = "8c0a4d0ab12f48cdc86da96cc43dda731c7879c4f88d92367e3452207785af03" %}
+{% set sha256 = "a2c685937ae557bf98a6c903645afc49aef5320ac14de11820f6fe271afd0da6" %}
 {% set build = 0 %}
 
 # recipe-lint fails if blas is undefined

@@ -20,9 +20,9 @@ source:
 
 build:
   {% if blas != "mkl" %}
-  {%   set mkl_option = "no" %}
+  {% set mkl_option = "no" %}
   {% else %}
-  {%   set mkl_option = "yes" %}
+  {% set mkl_option = "yes" %}
   {% endif %}
   number: {{ build }}
   {% if target_platform == "win-64" %}
@@ -33,13 +33,13 @@ build:
   skip: true  # [linux32 or win32 or py<310]
 
   {% if blas == "openblas" or osx %}
-  {%   if win or linux %}
-  {%     set blas_prefix = "openblas_" %}
-  {%   else %}
-  {%     set blas_prefix = "" %}  # For osx, dot not use a prefix, because we use the system blas (accelerate)
-  {%   endif %}
+  {% if win or linux %}
+  {% set blas_prefix = "openblas_" %}
   {% else %}
-  {%   set blas_prefix = "mkl_" %}
+  {% set blas_prefix = "" %}  # For osx, dot not use a prefix, because we use the system blas (accelerate)
+  {% endif %}
+  {% else %}
+  {% set blas_prefix = "mkl_" %}
   {% endif %}
   string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
@@ -63,7 +63,7 @@ requirements:
     - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
-    - blas=*=accelerate                   # [osx]
+    - blas =*=accelerate                  # [osx]
     - numpy
     - pip
     - pytest
@@ -74,7 +74,7 @@ requirements:
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]
-    - blas=*=accelerate                   # [osx]
+    - blas =*=accelerate                  # [osx]
     - python
     - xarray >=0.13
 

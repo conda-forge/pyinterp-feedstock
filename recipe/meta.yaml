@@ -3,13 +3,15 @@
 {% set sha256 = "65d6f8b380ebccc6387147297d87b7013c92c3961cdf2c3fcc5935b1e6bae6d0" %}
 {% set build = 0 %}
 
+{% if "osx" in target_platform %}
+{% set blas = "" %}
+{% endif %}
 # recipe-lint fails if blas is undefined
 {% set blas = blas or "openblas" %}
 {% if blas == "openblas" %}
 # prioritize openblas via build number
 {% set build = build + 100 %}
 {% endif %}
-
 
 package:
   name: {{ name|lower }}
@@ -20,7 +22,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  {% if blas == "openblas" %}
+  {% if blas == "openblas" or "osx" in target_platform %}
   {% set mkl_option = "no" %}
   {% else %}
   {% set mkl_option = "yes" %}
@@ -52,7 +54,7 @@ requirements:
   build:
     - python >=3.10                       # [build_platform != target_platform]
     - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-    - setuptools                          # [build_platform != target_platform]
+    - setuptools
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
     - cmake

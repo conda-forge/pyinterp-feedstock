@@ -1,6 +1,6 @@
 {% set name = "pyinterp" %}
 {% set version = "2024.11.0" %}
-{% set sha256 = "9b236d2b0ba1b86015d251f5ff3f5becd21fc1b982719ba1f0c7ddfa92830305" %}
+{% set sha256 = "65d6f8b380ebccc6387147297d87b7013c92c3961cdf2c3fcc5935b1e6bae6d0" %}
 {% set build = 0 %}
 
 # recipe-lint fails if blas is undefined
@@ -27,9 +27,9 @@ build:
   {% endif %}
   number: {{ build }}
   {% if target_platform == "win-64" %}
-  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}" --global-option="--generator=Visual Studio 17 2022"
+  script: {{ PYTHON }} -m pip install . -vv -Cmkl={{ mkl_option }}" -Cgenerator="Visual Studio 17 2022"
   {% else %}
-  script: {{ PYTHON }} -m pip install . -vv --global-option=build_ext --global-option="--mkl={{ mkl_option }}"
+  script: {{ PYTHON }} -m pip install . -vv -Cmkl={{ mkl_option }}"
   {% endif %}
   skip: true  # [linux32 or win32 or py<310 or (arm64 and blas != "openblas")]
 

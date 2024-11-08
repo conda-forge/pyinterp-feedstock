@@ -26,9 +26,9 @@ build:
   {% endif %}
   number: {{ build }}
   {% if target_platform == "win-64" %}
-  script: {{ PYTHON }} -m pip install . -vv -Cmkl={{ mkl_option }}" -Cgenerator="Visual Studio 17 2022"
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }}" -Cgenerator="Visual Studio 17 2022"
   {% else %}
-  script: {{ PYTHON }} -m pip install . -vv -Cmkl={{ mkl_option }}"
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }}"
   {% endif %}
   skip: true  # [linux32 or win32 or py<310 or (arm64 and blas != "accelerate")]
 

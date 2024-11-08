@@ -44,9 +44,10 @@ build:
   string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
   ignore_run_exports:
-    - mkl                                 # [blas == "mkl"]
-    - openblas                            # [(blas == "openblas") and (win or linux)]
-    - bals=*=accelerate                   # [osx]
+    - xarray
+    - numpy
+    - libboost
+    - python
 
 requirements:
   build:

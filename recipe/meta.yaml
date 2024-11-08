@@ -30,7 +30,7 @@ build:
   {% else %}
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }}
   {% endif %}
-  skip: true  # [linux32 or win32 or py<310 or (arm64 and blas != "openblas")]
+  skip: true  # [linux32 or win32 or py<310]
 
   {% if blas == "openblas" or osx %}
   {%   if win or linux %}

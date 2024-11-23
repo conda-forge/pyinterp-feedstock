@@ -24,12 +24,13 @@ build:
   {% else %}
   {% set mkl_option = "yes" %}
   {% endif %}
-  number: {{ build }}
   {% if target_platform == "win-64" %}
-  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} -Cgenerator="Visual Studio 17 2022"
+  {% set generator = "-Cgenerator=\"Visual Studio 17 2022\"" %}
   {% else %}
-  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }}
+  {% set generator = "" %}
   {% endif %}
+  number: {{ build }}
+  script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} {{ generator }}
   skip: true  # [linux32 or win32 or py<310]
 
   {% if blas == "openblas" or osx %}

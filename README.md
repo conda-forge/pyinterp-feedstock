@@ -11,7 +11,7 @@ Summary: Python library for optimized geo-referenced interpolation
 
 Development: https://github.com/CNES/pangeo-pyinterp
 
-Documentation: https://pangeo-pyinterp.readthedocs.io/
+Documentation: https://cnes.github.io/pangeo-pyinterp/
 
 Tools for interpolating geo-referenced data used in the field of
 geosciences. There are other libraries that cover this problem, but written

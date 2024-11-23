@@ -97,7 +97,7 @@ about:
     geosciences. There are other libraries that cover this problem, but written
     entirely in Python, the performance of these projects was not quite
     sufficient for our needs. That is why this project was created.
-  doc_url: https://pangeo-pyinterp.readthedocs.io/
+  doc_url: https://cnes.github.io/pangeo-pyinterp/
   dev_url: https://github.com/CNES/pangeo-pyinterp
 
 extra:

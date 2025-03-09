@@ -68,7 +68,7 @@ requirements:
     - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
-    - blas =*=accelerate                  # [osx]
+    - blas * accelerate                   # [osx]
     - numpy
     - pip
     - pytest
@@ -79,7 +79,7 @@ requirements:
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]
-    - blas =*=accelerate                  # [osx]
+    - blas * accelerate                   # [osx]
     - python
     - xarray >=0.13
 

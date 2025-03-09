@@ -1,13 +1,36 @@
 {% set name = "pyinterp" %}
-{% set version = "2024.11.0" %}
-{% set sha256 = "a2c685937ae557bf98a6c903645afc49aef5320ac14de11820f6fe271afd0da6" %}
-{% set build = 1 %}
+{% set version = "2025.3.0" %}
+{% set sha256 = "aa0fb426c15fede50aa98c41a98d3a8613d1c70ddd90f65f6bd8adf3156d933b" %}
+{% set build = 0 %}
 
-# recipe-lint fails if blas is undefined
+# Set blas to "openblas" if not already set
 {% set blas = blas or "openblas" %}
 {% if blas == "openblas" %}
-# prioritize openblas via build number
-{%   set build = build + 100 %}
+# Prioritize openblas via build number
+{% set build = build + 100 %}
+{% endif %}
+# Set mkl_option to "yes" if blas is "mkl"
+{% if blas != "mkl" %}
+{% set mkl_option = "no" %}
+{% else %}
+{% set mkl_option = "yes" %}
+{% endif %}
+# Define the generator for the build
+{% if target_platform == "win-64" %}
+{% set generator = "-Cgenerator=\"Visual Studio 17 2022\"" %}
+{% else %}
+{% set generator = "" %}
+{% endif %}
+# Define the prefix for the package name
+{% if blas == "openblas" or osx %}
+{% if win or linux %}
+{% set blas_prefix = "openblas_" %}
+{% else %}
+# For OSX, dot not use a prefix, because we use the system blas (accelerate)
+{% set blas_prefix = "" %}
+{% endif %}
+{% else %}
+{% set blas_prefix = "mkl_" %}
 {% endif %}
 
 package:
@@ -19,29 +42,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  {% if blas != "mkl" %}
-  {% set mkl_option = "no" %}
-  {% else %}
-  {% set mkl_option = "yes" %}
-  {% endif %}
-  {% if target_platform == "win-64" %}
-  {% set generator = "-Cgenerator=\"Visual Studio 17 2022\"" %}
-  {% else %}
-  {% set generator = "" %}
-  {% endif %}
   number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} {{ generator }}
   skip: true  # [linux32 or win32 or py<310]
-
-  {% if blas == "openblas" or osx %}
-  {% if win or linux %}
-  {% set blas_prefix = "openblas_" %}
-  {% else %}
-  {% set blas_prefix = "" %}  # For osx, dot not use a prefix, because we use the system blas (accelerate)
-  {% endif %}
-  {% else %}
-  {% set blas_prefix = "mkl_" %}
-  {% endif %}
   string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
   ignore_run_exports:
@@ -65,7 +68,7 @@ requirements:
     - libboost-devel >=1.79.0
     - mkl-devel                           # [blas == "mkl"]
     - openblas                            # [(blas == "openblas") and (win or linux)]
-    - blas =*=accelerate                  # [osx]
+    - blas * accelerate                   # [osx]
     - numpy
     - pip
     - pytest
@@ -76,7 +79,7 @@ requirements:
     - dask *
     - mkl *                               # [blas == "mkl"]
     - openblas *                          # [(blas == "openblas") and (win or linux)]
-    - blas =*=accelerate                  # [osx]
+    - blas * accelerate                   # [osx]
     - python
     - xarray >=0.13
 
@@ -89,7 +92,6 @@ test:
 about:
   home: https://github.com/CNES/pangeo-pyinterp
   license: BSD-3-Clause
-  license_family: BSD
   license_file: LICENSE
   summary: Python library for optimized geo-referenced interpolation
 

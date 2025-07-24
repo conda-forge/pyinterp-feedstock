@@ -1,5 +1,5 @@
 blas:
-- openblas
+- mkl
 c_stdlib:
 - vs
 channel_sources:
@@ -7,7 +7,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- vs2019
+- vs2022
 mkl:
 - '2024'
 mkl_devel:
@@ -24,6 +24,3 @@ python:
 - 3.13.* *_cp313
 target_platform:
 - win-64
-zip_keys:
-- - python
-  - numpy

@@ -8,29 +8,29 @@ jobs:
     vmImage: windows-2022
   strategy:
     matrix:
-      win_64_blasmklnumpy2.0python3.10.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.10.____cpython
+      win_64_blasmklpython3.10.____cpython:
+        CONFIG: win_64_blasmklpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2.0python3.11.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.11.____cpython
+      win_64_blasmklpython3.11.____cpython:
+        CONFIG: win_64_blasmklpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2.0python3.12.____cpython:
-        CONFIG: win_64_blasmklnumpy2.0python3.12.____cpython
+      win_64_blasmklpython3.12.____cpython:
+        CONFIG: win_64_blasmklpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasmklnumpy2python3.13.____cp313:
-        CONFIG: win_64_blasmklnumpy2python3.13.____cp313
+      win_64_blasmklpython3.13.____cp313:
+        CONFIG: win_64_blasmklpython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.10.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.10.____cpython
+      win_64_blasopenblaspython3.10.____cpython:
+        CONFIG: win_64_blasopenblaspython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.11.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.11.____cpython
+      win_64_blasopenblaspython3.11.____cpython:
+        CONFIG: win_64_blasopenblaspython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2.0python3.12.____cpython:
-        CONFIG: win_64_blasopenblasnumpy2.0python3.12.____cpython
+      win_64_blasopenblaspython3.12.____cpython:
+        CONFIG: win_64_blasopenblaspython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
-      win_64_blasopenblasnumpy2python3.13.____cp313:
-        CONFIG: win_64_blasopenblasnumpy2python3.13.____cp313
+      win_64_blasopenblaspython3.13.____cp313:
+        CONFIG: win_64_blasopenblaspython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:

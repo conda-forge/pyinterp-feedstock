@@ -20,6 +20,9 @@ jobs:
       win_64_blasmklpython3.13.____cp313:
         CONFIG: win_64_blasmklpython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
+      win_64_blasmklpython3.14.____cp314:
+        CONFIG: win_64_blasmklpython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
       win_64_blasopenblaspython3.10.____cpython:
         CONFIG: win_64_blasopenblaspython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -31,6 +34,9 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       win_64_blasopenblaspython3.13.____cp313:
         CONFIG: win_64_blasopenblaspython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+      win_64_blasopenblaspython3.14.____cp314:
+        CONFIG: win_64_blasopenblaspython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
   timeoutInMinutes: 360
   variables:

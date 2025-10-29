@@ -19,7 +19,7 @@ cxx_compiler_version:
 macos_machine:
 - arm64-apple-darwin20.0.0
 mkl:
-- '2023'
+- '2025'
 numpy:
 - '2'
 openblas:

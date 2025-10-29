@@ -9,9 +9,9 @@ channel_targets:
 cxx_compiler:
 - vs2022
 mkl:
-- '2024'
+- '2025'
 mkl_devel:
-- '2024'
+- '2025'
 numpy:
 - '2'
 openblas:

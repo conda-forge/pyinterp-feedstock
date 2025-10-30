@@ -1,4 +1,4 @@
 blas:
   - openblas    # [win or linux]
-  - mkl         # [win or linux and not (linux_aarch64 or linux_ppc64le)]
+  - mkl         # [win or (linux and not linux_aarch64 and not linux_ppc64le)]
   - accelerate  # [osx]

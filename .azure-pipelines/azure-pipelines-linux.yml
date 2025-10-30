@@ -8,10 +8,6 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_blasmklpython3.10.____cpython:
-        CONFIG: linux_64_blasmklpython3.10.____cpython
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_blasmklpython3.11.____cpython:
         CONFIG: linux_64_blasmklpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -26,10 +22,6 @@ jobs:
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_blasmklpython3.14.____cp314:
         CONFIG: linux_64_blasmklpython3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
-      linux_64_blasopenblaspython3.10.____cpython:
-        CONFIG: linux_64_blasopenblaspython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
       linux_64_blasopenblaspython3.11.____cpython:
@@ -48,6 +40,71 @@ jobs:
         CONFIG: linux_64_blasopenblaspython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_blasmklpython3.11.____cpython:
+        CONFIG: linux_aarch64_blasmklpython3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasmklpython3.12.____cpython:
+        CONFIG: linux_aarch64_blasmklpython3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasmklpython3.13.____cp313:
+        CONFIG: linux_aarch64_blasmklpython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasmklpython3.14.____cp314:
+        CONFIG: linux_aarch64_blasmklpython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasopenblaspython3.11.____cpython:
+        CONFIG: linux_aarch64_blasopenblaspython3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasopenblaspython3.12.____cpython:
+        CONFIG: linux_aarch64_blasopenblaspython3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasopenblaspython3.13.____cp313:
+        CONFIG: linux_aarch64_blasopenblaspython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_aarch64_blasopenblaspython3.14.____cp314:
+        CONFIG: linux_aarch64_blasopenblaspython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-aarch64:alma9
+      linux_ppc64le_blasmklpython3.11.____cpython:
+        CONFIG: linux_ppc64le_blasmklpython3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasmklpython3.12.____cpython:
+        CONFIG: linux_ppc64le_blasmklpython3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasmklpython3.13.____cp313:
+        CONFIG: linux_ppc64le_blasmklpython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasmklpython3.14.____cp314:
+        CONFIG: linux_ppc64le_blasmklpython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasopenblaspython3.11.____cpython:
+        CONFIG: linux_ppc64le_blasopenblaspython3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasopenblaspython3.12.____cpython:
+        CONFIG: linux_ppc64le_blasopenblaspython3.12.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasopenblaspython3.13.____cp313:
+        CONFIG: linux_ppc64le_blasopenblaspython3.13.____cp313
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+      linux_ppc64le_blasopenblaspython3.14.____cp314:
+        CONFIG: linux_ppc64le_blasopenblaspython3.14.____cp314
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
+    maxParallel: 21
   timeoutInMinutes: 360
   variables: {}
 

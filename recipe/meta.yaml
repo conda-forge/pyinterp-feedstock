@@ -1,7 +1,7 @@
 {% set name = "pyinterp" %}
-{% set version = "2025.8.1" %}
-{% set sha256 = "7e352d4182a0054d2df0cddce1e4cdb908f766716c96ce790b8b97933c387b3a" %}
-{% set build = 2 %}
+{% set version = "2025.11.0" %}
+{% set sha256 = "0c82a7ecc5759d0f3e60cc6aefddccab3e3399f8d9b047d07a1445e75deb4b91" %}
+{% set build = 0 %}
 
 # Set blas to "openblas" if not already set
 {% set blas = blas or "openblas" %}
@@ -38,7 +38,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  #url: https://github.com/CNES/pangeo-{{ name }}/releases/download/{{ version }}/{{ name }}-{{ version }}.tar.gz
+  url: https://files.catbox.moe/at6nzr.gz
   sha256: {{ sha256 }}
 
 build:

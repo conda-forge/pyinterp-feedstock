@@ -17,9 +17,6 @@ jobs:
       osx_64_blasacceleratepython3.13.____cp313:
         CONFIG: osx_64_blasacceleratepython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      osx_64_blasacceleratepython3.14.____cp314:
-        CONFIG: osx_64_blasacceleratepython3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
       osx_64_blasmklpython3.11.____cpython:
         CONFIG: osx_64_blasmklpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -28,9 +25,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_64_blasmklpython3.13.____cp313:
         CONFIG: osx_64_blasmklpython3.13.____cp313
-        UPLOAD_PACKAGES: 'True'
-      osx_64_blasmklpython3.14.____cp314:
-        CONFIG: osx_64_blasmklpython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
       osx_64_blasopenblaspython3.11.____cpython:
         CONFIG: osx_64_blasopenblaspython3.11.____cpython
@@ -41,9 +35,6 @@ jobs:
       osx_64_blasopenblaspython3.13.____cp313:
         CONFIG: osx_64_blasopenblaspython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      osx_64_blasopenblaspython3.14.____cp314:
-        CONFIG: osx_64_blasopenblaspython3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
       osx_arm64_blasacceleratepython3.11.____cpython:
         CONFIG: osx_arm64_blasacceleratepython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -52,9 +43,6 @@ jobs:
         UPLOAD_PACKAGES: 'True'
       osx_arm64_blasacceleratepython3.13.____cp313:
         CONFIG: osx_arm64_blasacceleratepython3.13.____cp313
-        UPLOAD_PACKAGES: 'True'
-      osx_arm64_blasacceleratepython3.14.____cp314:
-        CONFIG: osx_arm64_blasacceleratepython3.14.____cp314
         UPLOAD_PACKAGES: 'True'
       osx_arm64_blasmklpython3.11.____cpython:
         CONFIG: osx_arm64_blasmklpython3.11.____cpython
@@ -65,9 +53,6 @@ jobs:
       osx_arm64_blasmklpython3.13.____cp313:
         CONFIG: osx_arm64_blasmklpython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_blasmklpython3.14.____cp314:
-        CONFIG: osx_arm64_blasmklpython3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
       osx_arm64_blasopenblaspython3.11.____cpython:
         CONFIG: osx_arm64_blasopenblaspython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
@@ -77,10 +62,6 @@ jobs:
       osx_arm64_blasopenblaspython3.13.____cp313:
         CONFIG: osx_arm64_blasopenblaspython3.13.____cp313
         UPLOAD_PACKAGES: 'True'
-      osx_arm64_blasopenblaspython3.14.____cp314:
-        CONFIG: osx_arm64_blasopenblaspython3.14.____cp314
-        UPLOAD_PACKAGES: 'True'
-    maxParallel: 21
   timeoutInMinutes: 360
   variables: {}
 

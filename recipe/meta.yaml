@@ -45,8 +45,11 @@ source:
 build:
   number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} {{ generator }}
-  skip: true  # [linux32 or win32 or py<311 or (blas == "mkl" and (linux_aarch64 or linux_ppc64le))]
+  skip: true  # [linux32 or win32 or py<311]
   string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
+  {% if blas == "mkl" and (target_platform == "linux-aarch64" or target_platform == "linux-ppc64le") %}
+  skip: true  # skipping mkl on unsupported platforms
+  {% endif %}
 
   ignore_run_exports:
     - xarray

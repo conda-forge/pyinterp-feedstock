@@ -45,7 +45,7 @@ source:
 build:
   number: {{ build }}
   script: {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} {{ generator }}
-  skip: true  # [linux32 or win32 or py<311]
+  skip: true  # [linux32 or win32 or py<311 or (blas == "mkl" and (linux_aarch64 or linux_ppc64le))]
   string: {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
 
   ignore_run_exports:

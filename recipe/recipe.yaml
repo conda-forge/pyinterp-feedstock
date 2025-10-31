@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: pyinterp
   version: 2025.11.0
+  build_number: 1
   sha256: ead3eeb41dc9378918a3b42afb2b9bf64b48593f369c9b3afbbd14f369c88a58
 
 package:
@@ -14,10 +15,10 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 0
+  number: ${{ build_number }}
   skip:
     - (aarch64 or ppc64le) and blas == "mkl"
-  string: ${{ blas }}${{ hash }}_${{ build_number }}
+  string: ${{ blas }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
   variant:
     down_prioritize_variant: ${{ 1 if blas == "mkl" else 0 }}
   script: '${{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl=${{ "yes" if blas == "mkl" else "no" }} ${{ "-Cgenerator=\"Visual Studio 17 2022\"" if win else "" }}'

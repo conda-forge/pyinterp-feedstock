@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: pyinterp
   version: 2025.11.0
-  sha256: 72b700ba4919529fc28f2eea433f7c09713630349a674497151e88c8315a13ea
+  sha256: 3456ae0f2ef46d13ac1ca96901e4792ba857bf2e86a2044ccabec6e9bcdb42f7
 
 package:
   name: ${{ name|lower }}

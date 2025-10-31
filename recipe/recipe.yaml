@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: pyinterp
   version: 2025.11.0
-  sha256: 2cfb6516b9e90b515ed392c7a92c2cf27b269e6d31906d15b1be1038bdcfd043
+  sha256: ead3eeb41dc9378918a3b42afb2b9bf64b48593f369c9b3afbbd14f369c88a58
 
 package:
   name: ${{ name|lower }}
@@ -14,9 +14,9 @@ source:
   sha256: ${{ sha256 }}
 
 build:
+  number: 0
   skip:
     - (aarch64 or ppc64le) and blas == "mkl"
-  number: 0
   string: ${{ blas }}${{ hash }}_${{ build_number }}
   variant:
     down_prioritize_variant: ${{ 1 if blas == "mkl" else 0 }}

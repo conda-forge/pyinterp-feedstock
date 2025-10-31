@@ -3,6 +3,7 @@ schema_version: 1
 context:
   name: pyinterp
   version: 2025.11.0
+  build_number: 1
   sha256: ead3eeb41dc9378918a3b42afb2b9bf64b48593f369c9b3afbbd14f369c88a58
 
 package:
@@ -14,7 +15,7 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: 1
+  number: ${{ build_number }}
   skip:
     - (aarch64 or ppc64le) and blas == "mkl"
   string: ${{ blas }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
@@ -29,7 +30,7 @@ requirements:
         - python
         - cross-python_${{ target_platform }}
         - setuptools
-    # - ${{ stdlib('c') }}
+    - ${{ stdlib('c') }}
     - ${{ compiler('cxx') }}
     - cmake
     - if: linux or osx

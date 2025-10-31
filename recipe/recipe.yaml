@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: pyinterp
   version: 2025.11.0
-  sha256: 1bc00696ffb82e06043d64b887179b86d4e9c7acf43ceb73a7243baabdd1892c
+  sha256: 2cfb6516b9e90b515ed392c7a92c2cf27b269e6d31906d15b1be1038bdcfd043
 
 package:
   name: ${{ name|lower }}
@@ -70,11 +70,13 @@ tests:
       run:
         - pytest
     script:
-      # The --measure-coverage option limits the number of samples processed
-      # during tests, reducing the time needed for coverage reports. This option
-      # is enabled here to reduce CI execution time.
-      - TEST_DIR=$(python -c "import pyinterp; from pathlib import Path; print(Path(pyinterp.__file__).parent / 'tests')")
-      - pytest -q "$TEST_DIR" --measure-coverage
+      interpreter: python
+      content: |
+        import pathlib
+        import pytest
+        import pyinterp
+        test_dir = pathlib.Path(pyinterp.__file__).parent / 'tests'
+        pytest.main(["-q", str(test_dir), "--measure-coverage"])
 
 about:
   license: BSD-3-Clause

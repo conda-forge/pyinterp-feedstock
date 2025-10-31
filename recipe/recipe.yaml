@@ -70,7 +70,13 @@ tests:
       run:
         - pytest
     script:
-      - pytest --pyargs pyinterp
+      # The --measure-coverage option limits the number of samples processed
+      # during tests, reducing the time needed for coverage reports. Because
+      # tests run very long on ARM and PPC64 platforms, we enable it here to
+      # shorten test duration.
+      if: aarch64 or ppc64le
+      then: pytest --pyargs pyinterp --measure-coverage
+      else: pytest --pyargs pyinterp
 
 about:
   license: BSD-3-Clause

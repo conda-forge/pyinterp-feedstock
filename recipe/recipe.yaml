@@ -4,8 +4,6 @@ context:
   name: pyinterp
   version: 2025.11.0
   sha256: 79a42e86b41607d6a11988264661c0997f615218bafdfd8836ec1fe3e071073e
-  build: 0
-  blas: openblas
 
 package:
   name: ${{ name|lower }}
@@ -16,40 +14,18 @@ source:
   sha256: ${{ sha256 }}
 
 build:
-  number: |-
-    {% set build_num = build %}
-    {% if blas == "openblas" %}
-      {% set build_num = build_num + 100 %}
-    {% endif %}
-    {{ build_num }}
-  string: |-
-    {% set blas_prefix = "" %}
-    {% if blas == "openblas" and (win or linux) %}
-      {% set blas_prefix = "openblas_" %}
-    {% elif blas == "mkl" %}
-      {% set blas_prefix = "mkl_" %}
-    {% endif %}
-    {{ blas_prefix }}py{{ CONDA_PY }}h{{ PKG_HASH }}_{{ build }}
-  skip: linux32 or win32 or python_impl == 'pypy' or python < '3.10' or (blas == "mkl" and (linux_aarch64 or linux_ppc64le))
-  script: |-
-    {% set mkl_option = "yes" if blas == "mkl" else "no" %}
-    {% set generator = "-Cgenerator=\"Visual Studio 17 2022\"" if target_platform == "win-64" else "" %}
-    {{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl={{ mkl_option }} {{ generator }}
-  ignore_run_exports:
-    by_name:
-      - xarray
-      - numpy
-      - libboost
-      - python
+  skip:
+    - (aarch64 or ppc64le) and blas == "mkl"
+  number: 0
+  script: '${{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl=${{ "yes" if blas == "mkl" else "no" }} ${{ "-Cgenerator=\"Visual Studio 17 2022\"" if win else "" }}'
 
 requirements:
   build:
     - if: build_platform != target_platform
-      then: python
-    - if: build_platform != target_platform
-      then: cross-python_${{ target_platform }}
-    - if: build_platform != target_platform
-      then: setuptools
+      then:
+        - python
+        - cross-python_${{ target_platform }}
+        - setuptools
     - ${{ compiler('cxx') }}
     - ${{ stdlib("c") }}
     - cmake
@@ -80,6 +56,12 @@ requirements:
       then: blas * accelerate
     - python
     - xarray >=0.13
+  ignore_run_exports:
+    from_package:
+      - xarray
+      - numpy
+      - libboost
+      - python
 
 tests:
   - requirements:

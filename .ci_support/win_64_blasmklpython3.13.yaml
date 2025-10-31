@@ -1,20 +1,14 @@
 blas:
-- openblas
+- mkl
 c_stdlib:
-- sysroot
-c_stdlib_version:
-- '2.17'
+- vs
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- gxx
-cxx_compiler_version:
-- '14'
-docker_image:
-- quay.io/condaforge/linux-anvil-aarch64:alma9
-mkl:
+- vs2022
+mkl_devel:
 - '2024'
 numpy:
 - '2'
@@ -25,6 +19,6 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.13.* *_cp313
+- '3.13'
 target_platform:
-- linux-aarch64
+- win-64

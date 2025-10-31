@@ -17,7 +17,7 @@ build:
   number: 0
   skip:
     - (aarch64 or ppc64le) and blas == "mkl"
-  string: ${{ blas }}_py${{ python }}${{ hash }}_${{ build_number }}
+  string: ${{ blas }}_py${{ python }}${{ hash }}_${{ number }}
   variant:
     down_prioritize_variant: ${{ 1 if blas == "mkl" else 0 }}
   script: '${{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl=${{ "yes" if blas == "mkl" else "no" }} ${{ "-Cgenerator=\"Visual Studio 17 2022\"" if win else "" }}'

@@ -3,7 +3,7 @@ schema_version: 1
 context:
   name: pyinterp
   version: 2025.11.0
-  sha256: 79a42e86b41607d6a11988264661c0997f615218bafdfd8836ec1fe3e071073e
+  sha256: 72b700ba4919529fc28f2eea433f7c09713630349a674497151e88c8315a13ea
 
 package:
   name: ${{ name|lower }}
@@ -17,6 +17,9 @@ build:
   skip:
     - (aarch64 or ppc64le) and blas == "mkl"
   number: 0
+  string: ${{ blas_variant }}${{ hash }}_${{ build_number }}
+  variant:
+    down_prioritize_variant: ${{ 1 if blas_variant == "mkl" else 0 }}
   script: '${{ PYTHON }} -m pip install . -vv --no-build-isolation -Cmkl=${{ "yes" if blas == "mkl" else "no" }} ${{ "-Cgenerator=\"Visual Studio 17 2022\"" if win else "" }}'
 
 requirements:
@@ -26,8 +29,8 @@ requirements:
         - python
         - cross-python_${{ target_platform }}
         - setuptools
+    - ${{ stdlib('c') }}
     - ${{ compiler('cxx') }}
-    - ${{ stdlib("c") }}
     - cmake
     - if: linux or osx
       then: make
@@ -61,7 +64,6 @@ requirements:
       - xarray
       - numpy
       - libboost
-      - python
 
 tests:
   - requirements:

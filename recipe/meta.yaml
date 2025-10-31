@@ -1,7 +1,7 @@
 {% set name = "pyinterp" %}
-{% set version = "2025.8.1" %}
-{% set sha256 = "7e352d4182a0054d2df0cddce1e4cdb908f766716c96ce790b8b97933c387b3a" %}
-{% set build = 2 %}
+{% set version = "2025.11.0" %}
+{% set sha256 = "79a42e86b41607d6a11988264661c0997f615218bafdfd8836ec1fe3e071073e" %}
+{% set build = 0 %}
 
 # Set blas to "openblas" if not already set
 {% set blas = blas or "openblas" %}

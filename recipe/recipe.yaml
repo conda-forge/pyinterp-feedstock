@@ -2,9 +2,9 @@ schema_version: 1
 
 context:
   name: pyinterp
-  version: 2026.2.0
+  version: 2026.4.0
   build_number: 0
-  sha256: 136ad9982ac0ffdf519dbc1e557292ecb37e270560c3a64e0e76cdd4e50475fe
+  sha256: 3397dcd3ed77770a66f5179495cb67ddcbe92f2ed506aa44082044c4fba4c70a
 
 package:
   name: ${{ name|lower }}
@@ -77,7 +77,7 @@ tests:
         import pytest
         import pyinterp
         test_dir = pathlib.Path(pyinterp.__file__).parent / 'tests'
-        pytest.main(["-q", str(test_dir), "--measure-coverage"])
+        pytest.main(["-q", str(test_dir)])
 
 about:
   license: BSD-3-Clause

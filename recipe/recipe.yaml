@@ -2,9 +2,9 @@ schema_version: 1
 
 context:
   name: pyinterp
-  version: 2026.4.0
-  build_number: 1
-  sha256: 3397dcd3ed77770a66f5179495cb67ddcbe92f2ed506aa44082044c4fba4c70a
+  version: "2026.6.0"
+  build_number: 0
+  sha256: 2541bf90739b1119d380ac9ecfb2b77683307fe0f6609cb374bcae05db35449b
 
 package:
   name: ${{ name|lower }}

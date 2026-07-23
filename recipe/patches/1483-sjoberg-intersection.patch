@@ -1,0 +1,22 @@
+Backport of boostorg/geometry PR #1483 (not yet in a Boost release, absent from 1.90).
+
+Fixes a sign error in the Sjoberg geodesic intersection formula that produced
+wrong LineString/Polygon intersection coordinates for segments lying on the
+equator. See:
+  - https://github.com/boostorg/geometry/issues/1482
+  - https://github.com/boostorg/geometry/pull/1483
+  - https://github.com/CNES/pangeo-pyinterp/issues/36
+
+diff --git a/include/boost/geometry/formulas/sjoberg_intersection.hpp b/include/boost/geometry/formulas/sjoberg_intersection.hpp
+index ea74000391..ac6aba040f 100644
+--- a/include/boost/geometry/formulas/sjoberg_intersection.hpp
++++ b/include/boost/geometry/formulas/sjoberg_intersection.hpp
+@@ -566,7 +566,7 @@ class sjoberg_geodesic
+     {
+         CT const c0 = 0;
+         CT const dLj = d_lambda(c0);
+-        return lonj - asin_tj_t0j + dLj;
++        return lonj + sign_lon_diff * (-asin_tj_t0j + dLj);
+     }
+
+     CT d_lambda(CT const& sin_beta) const

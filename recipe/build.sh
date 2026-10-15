@@ -13,6 +13,11 @@ patch -p1 -d "$PREFIX" < "$RECIPE_DIR/patches/1483-sjoberg-intersection.patch"
 # a Python script that cannot describe the target interpreter.
 if [[ -d "$PREFIX/include/python${PY_VER}t" ]]; then
   export CMAKE_ARGS="${CMAKE_ARGS:-} -DPython_FIND_ABI=ANY;ANY;ANY;ON -DPython_INCLUDE_DIR=$PREFIX/include/python${PY_VER}t"
+  # Without a config script FindPython leaves Python_SOABI empty, so nanobind
+  # would not build its free-threaded support (nb_ft.cpp): provide the SOABI.
+  if [[ "${target_platform}" == osx-* ]]; then
+    export CMAKE_ARGS="${CMAKE_ARGS} -DSKBUILD_SOABI=cpython-${PY_VER//./}t-darwin"
+  fi
 fi
 
 $PYTHON -m pip install . -vv --no-build-isolation

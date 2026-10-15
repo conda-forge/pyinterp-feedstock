@@ -8,9 +8,11 @@ set -euxo pipefail
 patch -p1 -d "$PREFIX" < "$RECIPE_DIR/patches/1483-sjoberg-intersection.patch"
 
 # FindPython ignores free-threaded interpreters unless explicitly requested
-# (4th element of Python_FIND_ABI, CMake >= 3.30).
+# (4th element of Python_FIND_ABI, CMake >= 3.30). The include directory is
+# given explicitly because, when cross-compiling on macOS, python3.Xt-config is
+# a Python script that cannot describe the target interpreter.
 if [[ -d "$PREFIX/include/python${PY_VER}t" ]]; then
-  export CMAKE_ARGS="${CMAKE_ARGS:-} -DPython_FIND_ABI=ANY;ANY;ANY;ON"
+  export CMAKE_ARGS="${CMAKE_ARGS:-} -DPython_FIND_ABI=ANY;ANY;ANY;ON -DPython_INCLUDE_DIR=$PREFIX/include/python${PY_VER}t"
 fi
 
 $PYTHON -m pip install . -vv --no-build-isolation

@@ -1,4 +1,4 @@
-Backport of boostorg/geometry PR #1483 (not yet in a Boost release, absent from 1.90).
+Backport of boostorg/geometry PR #1483 (merged in develop, absent from Boost <= 1.92).
 
 Fixes a sign error in the Sjoberg geodesic intersection formula that produced
 wrong LineString/Polygon intersection coordinates for segments lying on the

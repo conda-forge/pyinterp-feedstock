@@ -18,6 +18,7 @@ build:
   number: ${{ build_number }}
   skip:
     - (aarch64 or ppc64le) and blas == "mkl"
+    - match(python, "<3.12")
   string: ${{ blas }}_py${{ python | version_to_buildstring }}h${{ hash }}_${{ build_number }}
   variant:
     down_prioritize_variant: ${{ 1 if blas == "mkl" else 0 }}

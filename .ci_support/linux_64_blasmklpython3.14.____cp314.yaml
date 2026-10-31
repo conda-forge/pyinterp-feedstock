@@ -1,3 +1,5 @@
+DOCKER_PLATFORM:
+- linux/amd64
 blas:
 - mkl
 c_stdlib:
